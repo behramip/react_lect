@@ -12,7 +12,7 @@ function variables1(){
   // let var2 = 5;
 
   // ale lze priradit novou hodnotu
-  var2 = 8;
+  // var2 = 8;
 
   // console.log(var2);
 
@@ -30,11 +30,11 @@ function variables1(){
 
 
   // let je block scoped
-  // for (var i = 0; i < 4; i++){
-  //   let bb = i+1;
-  // }
+  for (var i = 0; i < 4; i++){
+    let bb = i+1;
+  }
 
-  // console.log('bb' + bb)
+  console.log('bb' + bb)
 
 
   // console.log('DONE');
@@ -44,7 +44,7 @@ function variables1(){
 function variables2(){
   let funcs = [];
 
-  for (var i = 0; i < 3; i++) { // nahradit za let
+  for (let i = 0; i < 3; i++) { // nahradit za let
     funcs[i] = function() {
       console.log("My value: " + i);
     };
@@ -128,36 +128,36 @@ function variables2(){
   const arrayWords = ["aaa","bbeee","cccee","dadee","eeeef"];
 
   function arraysFilter() {
-    // let divisibleByThree = array.filter(function(value) {
-    //   return value % 3 === 0;
-    // })
+    let divisibleByThree = array.filter(function(value) {
+      return value % 3 === 0;
+    })
 
-    // let divisibleByThreeArrowConcise = array.filter(x => x % 3 === 0);
+    let divisibleByThreeArrowConcise = array.filter(x => x % 3 === 0);
 
-    // console.log('divisible by three', divisibleByThree,
-    // '\ndivisible by three concise', divisibleByThreeArrowConcise);
+    console.log('divisible by three', divisibleByThree,
+    '\ndivisible by three concise', divisibleByThreeArrowConcise);
   }
 
   function arraysMap() {
-    // let timesTwo = array.map(x => x * 2);
+    let timesTwo = array.map(x => x * 2);
 
-    // let moduloAndAddedNumber = array.map(x => {
-    //   let result;
+    let moduloAndAddedNumber = array.map(x => {
+      let result;
 
-    //   if (x % 2 === 0){
-    //     result = 'Delitelne dvema ' + x;
-    //   }
-    //   else if (x % 3 === 0){
-    //     result = 'A tremi ' + x;
-    //   }
-    //   else {
-    //     result = 'NEZAJEM';
-    //   }
+      if (x % 2 === 0){
+        result = 'Delitelne dvema ' + x;
+      }
+      else if (x % 3 === 0){
+        result = 'A tremi ' + x;
+      }
+      else {
+        result = 'NEZAJEM';
+      }
 
-    //   return result;
-    // })
+      return result;
+    })
 
-    // console.log('times two', timesTwo, '\nmodulo addes number', moduloAndAddedNumber);
+    console.log('times two', timesTwo, '\nmodulo addes number', moduloAndAddedNumber);
   }
 
   function arraysReduce() {
@@ -177,7 +177,7 @@ function variables2(){
       return prev;
     },{})
 
-    // console.log('reduced', reduced);
+    console.log('reduced', reduced);
 
     var reduced2 = array.reduce((prev, current) => {
       return prev + current;
@@ -236,7 +236,8 @@ function variables2(){
 
     const [arr3, , , , arr4, ...restOfArr2] = combinedArr;
 
-    // console.log('Arr 1 ', arr1, ' |-|Arr 2 ', arr2, '\nrest of arr ', restOfArr);
+    console.log('Arr 1 ', arr1, ' |-|Arr 2 ', arr2, '\nrest of arr ', restOfArr);
+    console.log('-----------------------------')
     console.log('Arr 3 ', arr3, ' |-|Arr 4 ', arr4, '\nrest of arr2 ', restOfArr2);
   }
 
@@ -277,17 +278,17 @@ function variables2(){
 // arrayDestructuring();
 
 // PROMISES
-// msgAfterTimeout("", "Foo", 100, function (msg) {
-//   msgAfterTimeout(msg, "Bar", 200, function (msg) {
-//     console.log("done after 300ms:" + msg);
-//   });
-// });
+msgAfterTimeout("", "Foo", 100, function (msg) {
+  msgAfterTimeout(msg, "Bar", 200, function (msg) {
+    console.log("done after 300ms:" + msg);
+  });
+});
 
-// msgAfterTimeout2("", "Foo", 100)
-//   .then((msg) => msgAfterTimeout2(msg, "Bar", 200))
-//   .then((msg) => {
-//     console.log(`done after 300ms:${msg}`)
-// });
+msgAfterTimeout2("", "Foo", 100)
+  .then((msg) => msgAfterTimeout2(msg, "Bar", 200))
+  .then((msg) => {
+    console.log(`done after 300ms:${msg}`)
+});
 
-// Promise.all([msgAfterTimeout2("First", "Foo", 100), msgAfterTimeout2("Second", "Foo", 500), msgAfterTimeout2("Third", "Foo", 2000)])
-//   .then(x => console.log('Done', x))
+Promise.all([msgAfterTimeout2("First", "Foo", 100), msgAfterTimeout2("Second", "Foo", 500), msgAfterTimeout2("Third", "Foo", 2000)])
+  .then(x => console.log('Done', x))
