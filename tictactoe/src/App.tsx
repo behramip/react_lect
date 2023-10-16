@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { urlBase } from './components/helpers/constHelper'
+import { urlBase } from './helpers/constHelper'
 import { PlayerList } from './components/PlayerList'
 
 const App : React.FC = () => <Game />

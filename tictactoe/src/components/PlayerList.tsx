@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { urlBase } from './helpers/constHelper';
+import { urlBase } from '../helpers/constHelper';
 
 type PlayerListProps = {
     selectedPlayer: string,
