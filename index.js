@@ -12,9 +12,9 @@ function variables1(){
   // let var2 = 5;
 
   // ale lze priradit novou hodnotu
-  // var2 = 8;
+  var2 = 8;
 
-  // console.log(var2);
+  console.log('var2',var2);
 
   const var1 = 5;
 
@@ -34,7 +34,7 @@ function variables1(){
     let bb = i+1;
   }
 
-  console.log('bb' + bb)
+  // console.log('bb' + bb)
 
 
   // console.log('DONE');
@@ -44,7 +44,7 @@ function variables1(){
 function variables2(){
   let funcs = [];
 
-  for (let i = 0; i < 3; i++) { // nahradit za let
+  for (var i = 0; i < 3; i++) { // nahradit za let
     funcs[i] = function() {
       console.log("My value: " + i);
     };
@@ -91,7 +91,7 @@ function variables2(){
 
    var circle = new Circle({name: 'circle1', radius: 5})
    circle.logName();
-
+   
    var circumference = circle.countCircumference();
    console.log(circumference);
 
@@ -230,7 +230,7 @@ function variables2(){
   function arrayDestructuring(){
     const combinedArr = [...array1, ...array2];
 
-    // console.log('combined arr', combinedArr);
+    console.log('combined arr', combinedArr);
 
     const [arr1, arr2, ...restOfArr] = combinedArr;
 
