@@ -6,7 +6,7 @@ const App: React.FC = () => <Game />;
 type SquareContent = "o" | "x" | "";
 
 const MY_NAME = "Patrik";
-const URL_BASE = "http://brn-dvb-pbeh.swdev.local/";
+const URL_BASE = "http://localhost:8081/";
 
 const Game: React.FC = () => {
   const [squares, setSquares] = useState<Array<SquareContent>>(
@@ -123,6 +123,8 @@ const Square: React.FC<SquareProps> = ({ content, setSingleSquare, index }) => {
         width: "40px",
         border: "1px solid black",
         fontSize: "30px",
+        lineHeight: "40px",
+        verticalAlign: "top",
       }}
     >
       {content}
