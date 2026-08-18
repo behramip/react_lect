@@ -10,7 +10,7 @@ const URL_BASE = "http://brn-dvb-pbeh.swdev.local/";
 
 const Game: React.FC = () => {
   const [squares, setSquares] = useState<Array<SquareContent>>(
-    Array.from({ length: 9 }, (_, __) => ""),
+    Array<SquareContent>(9).fill(""),
   );
   const [lastPlayedX, setLastPlayedX] = useState<boolean>(false);
   const [postState, setPostState] = useState<string>("");
