@@ -1,14 +1,14 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine as build
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
 
 WORKDIR /app
 COPY . .
-RUN dotnet restore
-RUN dotnet publish -o /app/published-app
+RUN dotnet restore TicTacToeAPI.csproj
+RUN dotnet publish TicTacToeAPI.csproj -o /app/published-app
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine as runtime
+FROM mcr.microsoft.com/dotnet/aspnet:10.0-alpine AS runtime
 WORKDIR /app
 COPY --from=build /app/published-app /app
 
 ENTRYPOINT [ "dotnet", "/app/TicTacToeAPI.dll" ]
 
-EXPOSE 80
+EXPOSE 8080

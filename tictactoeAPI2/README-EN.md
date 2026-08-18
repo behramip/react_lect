@@ -9,5 +9,5 @@ API may be run locally via CLI commands `dotnet build` and `dotnet run`, or leve
 Image can be built locally, or can be pulled and run from DockerHub.
 ```
 docker pull patrikbehramiswi/tictactoe_api:latest
-docker run -p 8081:80 --name tictactoe_api patrikbehramiswi/tictactoe_api:latest
+docker run -p 8081:8080 --name tictactoe_api patrikbehramiswi/tictactoe_api:latest
 ```
